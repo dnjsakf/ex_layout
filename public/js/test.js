@@ -7,7 +7,7 @@ $(document).ready(function(){
     theme: "midnight",
     val: textarea.val()
   });
-  $.get('./init/java.txt', function(data){
+  $.get('./init/python3.txt', function(data){
     editor.setValue(data);
   });
   $(".select_compiler").change(function(){
