@@ -7,13 +7,13 @@ $(document).ready(function(){
     theme: "midnight",
     val: textarea.val()
   });
-  $.get('./init/python3.txt', function(data){
+  $.get('./init/java.txt', function(data){
     editor.setValue(data);
   });
   $(".select_compiler").change(function(){
     var language = $(".select_compiler option:selected").val();
     console.log(language);
-    $.post('./init/python3.txt', function(data){
+    $.get('./init/'+language+'.txt', function(data){
       editor.setValue(data);
     });
   });
