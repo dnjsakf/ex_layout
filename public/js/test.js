@@ -7,14 +7,14 @@ $(document).ready(function(){
     theme: "midnight",
     val: textarea.val()
   });
-  $.get('init/Python3.txt', function(data){
+  var language = 'java'
+  $.get('./init/'+language+'.txt', function(data){
     editor.setValue(data);
   });
-
   $(".select_compiler").change(function(){
     var language = $(".select_compiler option:selected").val();
     console.log(language);
-    $.get('init/'+ language +'.txt', function(data){
+    $.get('./init/'+language+'.txt', function(data){
       editor.setValue(data);
     });
   });
