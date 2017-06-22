@@ -8,7 +8,7 @@ $(document).ready(function(){
     val: textarea.val()
   });
   var language = 'java'
-  $.post('init/'+language+'.txt', function(data){
+  $.post('init/java.txt', function(data){
     editor.setValue(data);
   });
   $(".select_compiler").change(function(){
