@@ -7,14 +7,13 @@ $(document).ready(function(){
     theme: "midnight",
     val: textarea.val()
   });
-  var language = 'java'
-  $.post('init/java.txt', function(data){
+  $.get('init/java.txt', function(data){
     editor.setValue(data);
   });
   $(".select_compiler").change(function(){
     var language = $(".select_compiler option:selected").val();
     console.log(language);
-    $.post('init/'+language+'.txt', function(data){
+    $.post('init/python3.txt', function(data){
       editor.setValue(data);
     });
   });
