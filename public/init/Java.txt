@@ -1,0 +1,7 @@
+class INIT_JAVA{
+  public static void main(){
+    String result = 'your solution'
+
+    System.out.println(result);
+  }
+}

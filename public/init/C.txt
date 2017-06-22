@@ -1,0 +1,5 @@
+void main(){
+  char result[64];
+
+  printf("your solution");
+}

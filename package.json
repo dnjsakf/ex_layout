@@ -11,6 +11,8 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "highlight": "^0.2.4",
+    "jade-code-mirror": "^2.0.0",
     "pug": "^2.0.0-rc.2"
   }
 }

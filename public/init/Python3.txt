@@ -1,0 +1,6 @@
+def solution():
+  result = 'your solution'
+
+
+  print(result)
+  return result

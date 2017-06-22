@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    link(rel='stylesheet', href='lib/codemirror/lib/codemirror.css')
+    script(src='lib/codemirror/lib/codemirror.js')
+    script(src='lib/codemirror/mode/javascript/javascript.js')
+    script(src='lib/codemirror/mode/pug/pug.js')
+    script(src='lib/myScript.js')
+    script.
+      $(document).ready(function(){
+        var editor = CodeMirror.fromTextArea($('#editor')[0], {
+          mode:"javascript",
+          lineNumbers: true
+        });
+        alert('created editor');
+      });
+    style.
+      .CodeMirror {
+      border: 1px solid #eee;
+      width:100%;
+      font-size:13px;
+      }
+  body
+    h1 CodeMirror 2
+    textarea#editor(name = 'bs_editor') asdf

@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title BattleCodeTester
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    link(rel='stylesheet', type='text/css', href='./css/gridlayout.css')
+    link(rel='stylesheet', href='lib/codemirror/theme/midnight.css')
+    link(rel='stylesheet', href='lib/codemirror/lib/codemirror.css')
+    script(src='lib/codemirror/lib/codemirror.js')
+    script(src='lib/codemirror/mode/javascript/javascript.js')
+    script(src='js/test.js')
+    style(rel='stylesheet', type='text/css').
+      .CodeMirror {
+        border: 1px solid #eee;
+        width:100%;
+        font-size:13px;
+      }
+      table{
+        width:100%;
+      }
+      
+  body
+    .wrapper
+      .box.header BattleCode
+      .box.sidebar
+        | Question
+        br
+        |         input = int N
+        br
+        |         1+2+3+4+5+ ... + N = R
+      .box.sidebar2
+        | Example
+        br
+        a(style='font-size:20px;')
+          | input : 5
+          br
+          |           output: 1+2+3+4+5=15
+      .box.content
+        form(action='#', method='get')
+          table
+            tr
+              td 컴파일러
+            tr
+              td
+                select.select_compiler(name='compiler')
+                  option(value='C') C
+                  option(value='java') Java
+                  option(value='python3', selected='selected') Python3
+                  option(value='test') exec tester
+            tr
+              td SourceCode
+            tr
+              td
+                textarea#editor(name='editor')
+                  | test
+            tr
+              td
+                input(name='compile', type='submit', value='compile')
+      .box.footer

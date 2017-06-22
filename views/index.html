@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BattleCodeTester</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/gridlayout.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./lib/codemirror/theme/midnight.css">
+    <link rel="stylesheet" href="./lib/codemirror/lib/codemirror.css">
+    <script src="./lib/codemirror/lib/codemirror.js"></script>
+    <script src="./lib/codemirror/mode/javascript/javascript.js"></script>
+    <script>
+      jQuery(document).ready(function(){
+        var textarea = document.getElementById("editor");
+        var editor = CodeMirror.fromTextArea(textarea, {
+          lineNumbers: true,
+          lineWrapping: true,
+          matchBrackets: true,
+          theme: "midnight",
+          val: textarea.value
+        });
+
+        jQuery(".select_compiler").change(function(){
+          var fileName = $(".select_compiler option:selected").val();
+          alert(fileName);
+          jQuery.get("./init/init_code_java.txt", function(data) {
+            alert(data);
+          });
+        });
+      });
+    </script>
+    <style rel="stylesheet" type="text/css">
+      .CodeMirror {
+        border: 1px solid #eee;
+        width:100%;
+        font-size:13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box header">BattleCode</div>
+      <div class="box sidebar">
+        Question<br>
+        input = int N<br>
+        1+2+3+4+5+ ... + N = R
+      </div>
+      <div class="box sidebar2">
+        Example<br>
+        <a style="font-size:20px;">
+          input : 5<br>
+          output: 1+2+3+4+5=15
+        </a>
+      </div>
+      <div class="box content">
+        <form action="#" method="get">
+          <table>
+              <tr>
+                <td>컴파일러</td>
+              </tr>
+              <tr>
+                <td>
+                  <select class="select_compiler" name="compiler">
+                    <option value="C">C</option>
+                    <option value="java">Java</option>
+                    <option value="python" selected="selected">Python3</option>
+                    <option value="test">exec tester</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>SourceCode</td>
+              </tr>
+              <tr>
+                <td>
+                  <textarea id="editor" name="editor"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input name="compile" type="submit" value="compile">
+                </td>
+              </tr>
+          </table>
+        </form>
+      </div>
+      <div class="box footer">
+        <?php include('down.php'); ?>
+      </div>
+    </div>
+  </body>
+</html>
