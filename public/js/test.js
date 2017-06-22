@@ -13,6 +13,7 @@ $(document).ready(function(){
 
   $(".select_compiler").change(function(){
     var language = $(".select_compiler option:selected").val();
+    console.log(language);
     $.get('init/'+ language +'.txt', function(data){
       editor.setValue(data);
     });

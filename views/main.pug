@@ -37,7 +37,7 @@ html
           br
           |           output: 1+2+3+4+5=15
       .box.content
-        form(action='#', method='get')
+        form(action='#', method='post')
           table
             tr
               td 컴파일러
@@ -45,8 +45,8 @@ html
               td
                 select.select_compiler(name='compiler')
                   option(value='c') C
-                  option(value='java') Java
-                  option(value='python3', selected='selected') Python3
+                  option(value='java', selected='selected') Java
+                  option(value='python3') Python3
                   option(value='test') exec tester
             tr
               td SourceCode
